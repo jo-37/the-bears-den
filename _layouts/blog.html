@@ -38,27 +38,31 @@
         {{ content }}
       </section>
 	  <section id="nav_bar" class="inner">
-		<div class="nav_left">
-			{% if  page.previous %}
-			<a href="{{ page.previous.url | relative_url }}">
-				{{ page.previous.title }}
-			</a>
-			&lt;
-		{% endif %}
-		</div>
-		<div class="nav_center">
-			<a href="{{ site.url | relative_url }}">
-				Home
-			</a>
-		</div>
-		<div class="nav_right">
-			{% if  page.next %}
-			&gt;
-			<a href="{{ page.nest.url | relative_url }}">
-				{{ page.next.title }}
-			</a>
-			{% endif %}
-		</div>
+		  <table>
+			  <tr>
+				<td class="nav_left">
+					{% if page.next %}
+					<a href="{{ page.nest.url | relative_url }}">
+						{{ page.next.title }}
+					</a>
+					&lt;
+					{% endif %}
+				</td>
+				<td class="nav_center">
+					<a href="{{ site.url | relative_url }}">
+						Home
+					</a>
+				</td>
+				<td class="nav_right">
+					{% if page.previous %}
+					&gt;
+					<a href="{{ page.previous.url | relative_url }}">
+						{{ page.previous.title }}
+					</a>
+					{% endif %}
+				</td>
+			</tr>
+		  </table>
 	  </section>
     </div>
 
