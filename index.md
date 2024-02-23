@@ -9,6 +9,5 @@ __Enter at your own risk__
 | Date | Title |
 |---|---|
 | {{ post.date | date_to_long_string }} | [{{ post.title}}]({{ post.url | relative_url }}) |
-
 {% endfor %}
 |---|---|
