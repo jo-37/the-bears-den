@@ -2,9 +2,7 @@
 title: The Bear's Den
 ---
 
-# The Bear's Den
-__Enter at your own risk__
-## Posts
+# Posts
 {% for post in site.posts %}
 | Date | Title |
 |---|---|
