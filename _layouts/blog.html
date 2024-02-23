@@ -50,10 +50,13 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-	  <section id="content_header" class="inner">
-		  {{ page.date | date_to_long_string }}
-	  </section>
       <section id="main_content" class="inner">
+		<div>
+			<b>
+			  {{ page.date | date_to_long_string }}
+			  {{ page.topic }}
+		    </b>
+		</div>
         {{ content }}
       </section>
 	  <section id="nav_bar" class="inner">
