@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+<style>
+	.nav_tbl {
+		border: none;
+	}
+	.nav_left {
+		text-align: left;
+	}
+	.nav_center {
+		text-align: center;
+	}
+	.nav_right {
+		text-align: right;
+	}
+</style>
 {% seo %}
     {% include head-custom.html %}
   </head>
@@ -38,14 +52,14 @@
         {{ content }}
       </section>
 	  <section id="nav_bar" class="inner">
-		  <table>
+		  <table class="nav_tbl">
 			  <tr>
 				<td class="nav_left">
 					{% if page.next %}
 					<a href="{{ page.nest.url | relative_url }}">
 						{{ page.next.title }}
 					</a>
-					&lt;
+					&#x21E6;
 					{% endif %}
 				</td>
 				<td class="nav_center">
@@ -55,7 +69,7 @@
 				</td>
 				<td class="nav_right">
 					{% if page.previous %}
-					&gt;
+					&#x21E8;
 					<a href="{{ page.previous.url | relative_url }}">
 						{{ page.previous.title }}
 					</a>
