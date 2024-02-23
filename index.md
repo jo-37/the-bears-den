@@ -4,7 +4,21 @@ title: The Bear's Den
 
 # Posts
 
-| Date | Title |
-{% for post in site.posts %}
-| {{ post.date | date_to_long_string }} | [{{ post.title}}]({{ post.url | relative_url }}) |
-{% endfor %}
+```html
+<table>
+  <th>
+    <td>Date</td>
+    <td>Title</td>
+  </th>
+  {% for post in site.posts %}
+  <tr>
+    <td>
+    {{ post.date | date_to_long_string }}
+    </td>
+    <td>
+    [{{ post.title}}]({{ post.url | relative_url }})
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+```
