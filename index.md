@@ -16,7 +16,7 @@ title: The Bear's Den
     </td>
     <td>
     <a href="{{ post.url | relative_url }}">
-		{{ post.title}}
+		{{ post.topic }}: {{ post.title}}
 	</a>
     </td>
   </tr>

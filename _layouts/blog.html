@@ -66,7 +66,7 @@
 				<td class="nav_left">
 					{% if page.previous %}
 					<a href="{{ page.previous.url | relative_url }}">
-						{{ page.previous.title }}
+						{{ page.previous.topic }}: {{ page.previous.title }}
 					</a>
 					&#x21E6;
 					{% endif %}
@@ -80,7 +80,7 @@
 					{% if page.next %}
 					&#x21E8;
 					<a href="{{ page.next.url | relative_url }}">
-						{{ page.next.title }}
+						{{ page.next.topic }}: {{ page.next.title }}
 					</a>
 					{% endif %}
 				</td>
