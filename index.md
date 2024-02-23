@@ -4,7 +4,6 @@ title: The Bear's Den
 
 # Posts
 
-~~~html
 <table>
   <th>
     <td>Date</td>
@@ -21,4 +20,3 @@ title: The Bear's Den
   </tr>
   {% endfor %}
 </table>
-~~~

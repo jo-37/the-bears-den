@@ -57,7 +57,7 @@
 		  <table class="nav_tbl">
 			  <tr>
 				<td class="nav_left">
-					{% if page.next %}
+					{% if page.previous %}
 					<a href="{{ page.previous.url | relative_url }}">
 						{{ page.previous.title }}
 					</a>
@@ -70,9 +70,9 @@
 					</a>
 				</td>
 				<td class="nav_right">
-					{% if page.previous %}
+					{% if page.next %}
 					&#x21E8;
-					<a href="{{ page.nest.url | relative_url }}">
+					<a href="{{ page.next.url | relative_url }}">
 						{{ page.next.title }}
 					</a>
 					{% endif %}
