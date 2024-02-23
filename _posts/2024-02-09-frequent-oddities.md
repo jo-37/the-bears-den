@@ -1,0 +1,97 @@
+---
+layout: blog
+title: Frequent Oddities
+---
+# Frequent Oddities
+
+## Task 1: Odd Character
+**Submitted by: Mohammad Sajid Anwar**
+
+---
+You are given two strings, `$s` and `$t`.
+The string `$t` is generated using the shuffled characters of the string `$s` with an additional character.
+
+Write a script to find the additional character in the string `$t`.
+
+### Example 1
+```
+Input: $s = "Perl" $t = "Preel"
+Output: "e"
+```
+### Example 2
+```
+Input: $s = "Weekly" $t = "Weeakly"
+Output: "a"
+```
+### Example 3
+```
+Input: $s = "Box" $t = "Boxy"
+Output: "y"
+```
+---
+### Solution
+We may relax the preconditions in this task and solve something more general:
+Find the characters in string `$t` that are not contained in string `$s` respecting their multiplicity.
+
+Therefore we count up for every character in `$t` and count down for every character in `$s`.
+Characters with a positive final count (in the multiplicity of their count) represent the solution of the generalized task.
+
+We may utilize a property of the `x` operator: it produces an empty list if the right operand is negative.
+However, we need to suppress a warning in this case.
+
+The solution:
+```perl
+sub char_diff ($s, $t) {
+    my %count;
+    $count{$_}++ for split //, $t;
+    $count{$_}-- for split //, $s;
+    no warnings 'numeric';
+    map +($_) x $count{$_}, keys %count;
+}
+```
+See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-255/jo-37/perl/ch-1.pl).
+## Task 2: Most Frequent Word
+**Submitted by: Mohammad Sajid Anwar**
+
+---
+You are given a paragraph `$p` and a banned word `$w`.
+
+Write a script to return the most frequent word that is not banned.
+
+### Example 1
+```
+Input: $p = "Joe hit a ball, the hit ball flew far after it was hit."
+       $w = "hit"
+Output: "ball"
+
+The banned word "hit" occurs 3 times.
+The other word "ball" occurs 2 times.
+```
+### Example 2
+```
+Input: $p = "Perl and Raku belong to the same family. Perl is the most popular language in the weekly challenge."
+       $w = "the"
+Output: "Perl"
+
+The banned word "the" occurs 3 times.
+The other word "Perl" occurs 2 times.
+```
+---
+### Solution
+This task may be generalized by allowing a list of banned words.
+
+We count the individual words in the given paragraph, remove the banned words and pick the word having a maximum count from the remainder.
+
+The solution:
+```perl
+use List::UtilsBy 'max_by';
+
+sub mfw  {
+    my $p = shift;
+    my %count;
+    $count{$_}++ for split /\W+/, $p;
+    delete @count{@_}; 
+    max_by {$count{$_}} keys %count;
+}
+```
+See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-255/jo-37/perl/ch-2.pl).
