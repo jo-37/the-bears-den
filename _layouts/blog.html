@@ -10,6 +10,7 @@
 <style>
 	.nav_tbl {
 		border-style: none;
+		border-width: 0pt;
 		width: 100%;
 	}
 	.nav_left {
@@ -57,8 +58,8 @@
 			  <tr>
 				<td class="nav_left">
 					{% if page.next %}
-					<a href="{{ page.nest.url | relative_url }}">
-						{{ page.next.title }}
+					<a href="{{ page.previous.url | relative_url }}">
+						{{ page.previous.title }}
 					</a>
 					&#x21E6;
 					{% endif %}
@@ -71,8 +72,8 @@
 				<td class="nav_right">
 					{% if page.previous %}
 					&#x21E8;
-					<a href="{{ page.previous.url | relative_url }}">
-						{{ page.previous.title }}
+					<a href="{{ page.nest.url | relative_url }}">
+						{{ page.next.title }}
 					</a>
 					{% endif %}
 				</td>
