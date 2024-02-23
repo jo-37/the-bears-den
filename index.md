@@ -5,17 +5,19 @@ title: The Bear's Den
 # Posts
 
 <table>
-  <th>
-    <td>Date</td>
-    <td>Title</td>
-  </th>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+  </tr>
   {% for post in site.posts %}
   <tr>
     <td>
     {{ post.date | date_to_long_string }}
     </td>
     <td>
-    [{{ post.title}}]({{ post.url | relative_url }})
+    <a href="{{ post.url | relative_url }}">
+		{{ post.title}}
+	</a>
     </td>
   </tr>
   {% endfor %}
