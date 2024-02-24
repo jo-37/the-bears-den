@@ -6,23 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
-<style>
-	.nav_tbl {
-		border-style: none;
-		border-width: 0pt;
-		width: 100%;
-	}
-	.nav_left {
-		text-align: left;
-	}
-	.nav_center {
-		text-align: center;
-	}
-	.nav_right {
-		text-align: right;
-	}
-</style>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <style type="text/css">
+        .nav_tbl {
+            border: none;
+            width: 100%;
+        }
+        .nav_tbl * {
+            border: none;
+        }
+        .nav_left {
+            text-align: left;
+        }
+        .nav_center {
+            text-align: center;
+        }
+        .nav_right {
+            text-align: right;
+        }
+     </style>
 {% seo %}
     {% include head-custom.html %}
   </head>
@@ -32,9 +34,9 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-<!--          {% if site.github.is_project_page %}
+          {% if false and site.github.is_project_page %}
             <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-			{% endif %} -->
+            {% endif %}
 
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
@@ -51,42 +53,57 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-		<div>
-			<strong>
-			  {{ page.date | date_to_long_string }}
-			  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  {{ page.topic }}
-		    </strong>
-		</div>
+        <div>
+          <strong>
+            <table class="nav_tbl">
+              <tr>
+                <td class="nav_left">
+                  {{ page.date | date_to_long_string }}
+                </td>
+                <td class="nav_left">
+                  {{ page.topic }}
+                </td>
+              </tr>
+            </table>
+          </strng>
+        </div>
         {{ content }}
       </section>
-	  <section id="nav_bar" class="inner">
-		  <table class="nav_tbl">
-			  <tr>
-				<td class="nav_left">
-					{% if page.previous %}
-					<a href="{{ page.previous.url | relative_url }}">
-						{{ page.previous.topic }}: {{ page.previous.title }}
-					</a>
-					&#x21E6;
-					{% endif %}
-				</td>
-				<td class="nav_center">
-					<a href="{{ site.url | relative_url }}">
-						Overview
-					</a>
-				</td>
-				<td class="nav_right">
-					{% if page.next %}
-					&#x21E8;
-					<a href="{{ page.next.url | relative_url }}">
-						{{ page.next.topic }}: {{ page.next.title }}
-					</a>
-					{% endif %}
-				</td>
-			</tr>
-		  </table>
-	  </section>
+      <section id="nav_bar" class="inner">
+        <table class="nav_tbl">
+          <tr>
+            <td class="nav_left">
+              {% if page.previous %}
+              <a href="{{ page.previous.url | relative_url }}">
+                {{ page.previous.topic }}: {{ page.previous.title }}
+              </a>
+              {% endif %}
+            </td>
+            <td class="nav_left">
+              {% if page.previous %}
+              &#x21E6;
+              {% endif %}
+            </td>
+            <td class="nav_center">
+              <a href="{{ site.url | relative_url }}">
+                Overview
+              </a>
+            </td>
+            <td class="nav_right">
+              {% if page.next %}
+              &#x21E8;
+              {% endif %}
+            </td>
+            <td class="nav_right">
+              {% if page.next %}
+              <a href="{{ page.next.url | relative_url }}">
+                {{ page.next.topic }}: {{ page.next.title }}
+              </a>
+              {% endif %}
+            </td>
+          </tr>
+        </table>
+      </section>
     </div>
 
     <!-- FOOTER  -->
