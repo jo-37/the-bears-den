@@ -61,7 +61,13 @@
                   {{ page.date | date_to_long_string }}
                 </td>
                 <td class="nav_left">
-                  {{ page.topic }}
+                  {% if page.top_link %}
+                  <a href="{{ page.top_link }}">
+                  {% endif %}
+                    {{ page.topic }}
+                  {% if page.top_link %}
+                  </a>
+                  {% endif %}
                 </td>
               </tr>
             </table>
