@@ -1,15 +1,16 @@
 ---
+layout: default
 title: The Bear's Den
 ---
 
-# Posts
+<h1>Posts</h1>
 
 <table>
   <tr>
     <th>Date</th>
     <th>Title</th>
   </tr>
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
   <tr>
     <td>
     {{ post.date | date_to_long_string }}
@@ -22,3 +23,4 @@ title: The Bear's Den
   </tr>
   {% endfor %}
 </table>
+{% include paginator.html %}
