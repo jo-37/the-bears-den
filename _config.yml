@@ -11,3 +11,16 @@ plugins:
 - jekyll-remote-theme
 - jekyll-paginate
 paginate: 12
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: "content"
+    values:
+      layout: "default"
+      type: "pages"
