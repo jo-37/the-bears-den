@@ -2,12 +2,12 @@
 <div class="pagination">
          {% assign second_last = paginator.total_pages | minus: 1 %} 
 	     {% if paginator.total_pages > 2 and paginator.page > 2 %}
-		 <a href="{{ site.url }}">
+		 <a href="{{ site.url }}{{ site.base_url">
            &#x2AA1;&nbsp;
          </a>
 		 {% endif %}
          {% if paginator.previous_page %}
-		 <a href="{{ site.url }}{{ paginator.previous_page_path }}">
+		 <a href="{{ site.url }}{{ site.base_url }}{{ paginator.previous_page_path }}">
            &lt;&nbsp;
          </a>
          {% endif %}
@@ -15,12 +15,12 @@
          {{ paginator.page }}/{{paginator.total_pages }}
          {% endif %}
          {% if paginator.next_page %}
-		 <a href="{{site.url }}{{ paginator.next_page_path }}">
+		 <a href="{{ site.url }}{{site.base_url }}{{ paginator.next_page_path }}">
            &nbsp;&gt;
          </a>
          {% endif %}
          {% if paginator.total_pages > 2 and paginator.page < second_last %}
-         <a href="{{ site.url }}/page{{ paginator.total_pages }}">
+		 <a href="{{ site.url }}{{ site.base_url }}/page{{ paginator.total_pages }}">
              &nbsp;&#x2AA2;
          </a>
          {% endif %}
