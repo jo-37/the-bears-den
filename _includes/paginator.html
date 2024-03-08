@@ -1,13 +1,14 @@
 <!-- Pagination links -->
 <div class="pagination">
          {% assign second_last = paginator.total_pages | minus: 1 %} 
+		 {% assign last_path = paginator.total_pages | prepend: "/page" %}
 	     {% if paginator.total_pages > 2 and paginator.page > 2 %}
-		 <a href="{{ site.url }}{{ site.base_url }}">
+		 <a href="{{ '/' | relative_url }}">
            &#x2AA1;&nbsp;
          </a>
 		 {% endif %}
          {% if paginator.previous_page %}
-		 <a href="{{ site.url }}{{ site.base_url }}{{ paginator.previous_page_path }}">
+		 <a href="{{ paginator.previous_page_path | relative_url}}">
            &lt;&nbsp;
          </a>
          {% endif %}
@@ -15,12 +16,12 @@
          {{ paginator.page }}/{{paginator.total_pages }}
          {% endif %}
          {% if paginator.next_page %}
-		 <a href="{{ site.url }}{{site.base_url }}{{ paginator.next_page_path }}">
+		 <a href="{{ paginator.next_page_path | relative_url }}">
            &nbsp;&gt;
          </a>
          {% endif %}
          {% if paginator.total_pages > 2 and paginator.page < second_last %}
-		 <a href="{{ site.url }}{{ site.base_url }}/page{{ paginator.total_pages }}">
+		 <a href="{{ last_path | relative_url }}">
              &nbsp;&#x2AA2;
          </a>
          {% endif %}
