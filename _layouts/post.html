@@ -37,24 +37,22 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <div>
-          <strong>
-            <table class="nav_tbl">
-              <tr>
-                <td class="nav_left">
-                  {{ page.date | date_to_long_string }}
-                </td>
-                <td class="nav_left">
-                  {% if page.top_link %}
-                  <a href="{{ page.top_link }}">
-                  {% endif %}
-                    {{ page.topic }}
-                  {% if page.top_link %}
-                  </a>
-                  {% endif %}
-                </td>
-              </tr>
-            </table>
-          </strng>
+          <table class="nav_tbl">
+            <tr>
+              <td class="nav_left">
+                {{ page.date | date_to_long_string }}
+              </td>
+              <td class="nav_left">
+                {% if page.top_link %}
+                <a href="{{ page.top_link }}">
+                {% endif %}
+                  {{ page.topic }}
+                {% if page.top_link %}
+                </a>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
         </div>
         {{ content }}
       </section>
