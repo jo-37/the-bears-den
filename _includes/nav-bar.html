@@ -3,7 +3,12 @@
 	<td class="nav_left">
 	  {% if page.previous %}
 	  <a href="{{ page.previous.url | relative_url }}">
-		{{ page.previous.topic }}: {{ page.previous.title }}
+		{% if page.previous.topic %}
+		  {{ page.previous.topic }}:
+		{% else %}
+		  Challenge {{ page.previous.challenge }}:
+		{% endif %}
+		{{ page.previous.title }}
 	  </a>
 	  {% endif %}
 	</td>
@@ -25,7 +30,12 @@
 	<td class="nav_right">
 	  {% if page.next %}
 	  <a href="{{ page.next.url | relative_url }}">
-		{{ page.next.topic }}: {{ page.next.title }}
+		{% if page.next.topic %}
+		  {{ page.next.topic }}:
+		{% else %}
+		  Challenge {{ page.next.challenge }}:
+		{% endif %}
+		{{ page.next.title }}
 	  </a>
 	  {% endif %}
 	</td>
