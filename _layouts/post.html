@@ -42,22 +42,23 @@
               <td class="nav_left">
                 {{ page.date | date_to_long_string }}
               </td>
-              <td class="nav_left">
-                {% if page.top_link %}
-                <a href="{{ page.top_link }}">
-                {% endif %}
-                  {{ page.topic }}
-                {% if page.top_link %}
+              <td class="nav_right">
+                {% if page.challenge %}
+                <a
+					href="{{ page.challenge_url }}-{{ page.challenge }}">
+					Challenge {{ page.challenge }}
                 </a>
                 {% endif %}
               </td>
             </tr>
           </table>
         </div>
+		<h1>{{page.title}}</h1>
+	    {% include toc.html html=content h_min=2 h_max=2 item_class="toc" %}
         {{ content }}
       </section>
       <section id="nav_bar" class="inner">
-		{% include nav-bar.html %}
+  	   {% include nav-bar.html %}
       </section>
     </div>
 

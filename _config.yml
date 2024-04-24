@@ -19,6 +19,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      challenge_url: "https://theweeklychallenge.org/blog/perl-weekly-challenge"
+      solution_url: "https://github.com/manwar/perlweeklychallenge-club/blob/master"
   -
     scope:
       path: "content"
