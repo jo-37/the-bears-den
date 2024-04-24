@@ -18,7 +18,12 @@ title: The Bear's Den
     </td>
     <td>
     <a href="{{ post.url | relative_url }}">
-		{{ post.topic }}: {{ post.title}}
+		{% if post.challenge %}
+		Challenge {{ post.challenge }}:
+		{% elsif post.topic %}
+		{{ post.topic }}:
+		{% endif %}
+		{{ post.title}}
 	</a>
     </td>
   </tr>
