@@ -1,0 +1,33 @@
+<table class="nav_tbl">
+  <tr>
+	<td class="nav_left">
+	  {% if page.previous %}
+	  <a href="{{ page.previous.url | relative_url }}">
+		{{ page.previous.topic }}: {{ page.previous.title }}
+	  </a>
+	  {% endif %}
+	</td>
+	<td class="nav_left">
+	  {% if page.previous %}
+	  &#x1F808;    
+	  {% endif %}
+	</td>
+	<td class="nav_center">
+		<a href="{{ '/' | relative_url }}">
+		Overview
+	  </a>
+	</td>
+	<td class="nav_right">
+	  {% if page.next %}
+	  &#x1F80A;
+	  {% endif %}
+	</td>
+	<td class="nav_right">
+	  {% if page.next %}
+	  <a href="{{ page.next.url | relative_url }}">
+		{{ page.next.topic }}: {{ page.next.title }}
+	  </a>
+	  {% endif %}
+	</td>
+  </tr>
+</table>
