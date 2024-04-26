@@ -4,12 +4,12 @@
 		 {% assign last_path = paginator.total_pages | prepend: "/page" %}
 	     {% if paginator.total_pages > 2 and paginator.page > 2 %}
 		 <a href="{{ '/' | relative_url }}">
-           &#x2AA1;&nbsp;
+           &#x23EE;&nbsp;
          </a>
 		 {% endif %}
          {% if paginator.previous_page %}
 		 <a href="{{ paginator.previous_page_path | relative_url}}">
-           &lt;&nbsp;
+           &#x23F4;&nbsp;
          </a>
          {% endif %}
          {% if paginator.total_pages > 1 %}
@@ -17,12 +17,12 @@
          {% endif %}
          {% if paginator.next_page %}
 		 <a href="{{ paginator.next_page_path | relative_url }}">
-           &nbsp;&gt;
+           &nbsp;&#x23F5;
          </a>
          {% endif %}
          {% if paginator.total_pages > 2 and paginator.page < second_last %}
 		 <a href="{{ last_path | relative_url }}">
-             &nbsp;&#x2AA2;
+             &nbsp;&#x23ED;
          </a>
          {% endif %}
        </td>
