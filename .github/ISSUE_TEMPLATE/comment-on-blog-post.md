@@ -1,5 +1,5 @@
 ---
-name: Blog comment
+name: Comment on blog post
 about: Comments and questions
 title: 'Comment to challenge CCC task #T'
 labels: ''
