@@ -10,4 +10,4 @@ assignees: ''
 <!-- Please specify the blog post you're referring to: -->
 Regarding [blog post](https://github.sommrey.de/the-bears-den/YYYY/MM/DD/ch-CCC.html#task-T):
 
-<!-- Comment here-->
+<!-- Comment here: -->
