@@ -1,0 +1,30 @@
+<table class="nav_tbl">
+  <tr>
+	<td class="nav_left">
+	  {% if page.previous %}
+	  <a href="{{ page.previous.url | relative_url }}">
+		{% if page.previous.topic %}
+		  {{ page.previous.topic }}:
+		{% elsif page.previous.challenge %}
+		  Challenge {{ page.previous.challenge }}:
+		{% endif %}
+		{{ page.previous.title }}
+		&nbsp; ◀
+	  </a>
+	  {% endif %}
+	</td>
+	<td class="nav_right">
+	  {% if page.next %}
+	  <a href="{{ page.next.url | relative_url }}">
+	    ▶ &nbsp;
+		{% if page.next.topic %}
+		  {{ page.next.topic }}:
+		{% elsif page.next.challenge %}
+		  Challenge {{ page.next.challenge }}:
+		{% endif %}
+		{{ page.next.title }}
+	  </a>
+	  {% endif %}
+	</td>
+  </tr>
+</table>
