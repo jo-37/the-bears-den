@@ -57,13 +57,30 @@
 		<h1>{{page.title}}</h1>
 	    {% include toc.html html=content h_min=2 h_max=2 item_class="toc" %}
         {{ content }}
-	    <div>
+	    <!-- div>
 		  <hr/>
 		  If you have a question about this post or if you like to
 			  comment on it, feel free to <a
 		  <a href="https://github.com/jo-37/the-bears-den/issues/new?template=comment-on-blog-post.md&title=Comment+to+challenge+{{ page.challenge }} task %23&lt;task>">open an issue</a>
 		  in my github repository.
-	    </div>
+	    </div -->
+        <div>
+          <script src="https://giscus.app/client.js"
+			data-repo="jo-37/the-bears-den"
+			data-repo-id="R_kgDOLW66Pw"
+			data-category="General"
+			data-category-id="DIC_kwDOLW66P84Cxm1W"
+			data-mapping="pathname"
+			data-strict="0"
+			data-reactions-enabled="1"
+			data-emit-metadata="0"
+			data-input-position="bottom"
+			data-theme="preferred_color_scheme"
+			data-lang="en"
+			crossorigin="anonymous"
+			async>
+		  </script>
+        </div>
       </section>
       <section id="nav_bar" class="inner">
   	   {% include nav-bar.html %}
