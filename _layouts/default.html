@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-{% seo %}
+    {% seo %}
     {% include head-custom.html %}
   </head>
 
@@ -34,8 +34,29 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      <section id="nav_bar" class="inner">
+  	   {% include nav-bar-top.html %}
         {{ content }}
+        <div>
+          <script src="https://giscus.app/client.js"
+			data-repo="jo-37/the-bears-den"
+			data-repo-id="R_kgDOLW66Pw"
+			data-category="General"
+			data-category-id="DIC_kwDOLW66P84Cxm1W"
+			data-mapping="pathname"
+			data-strict="0"
+			data-reactions-enabled="1"
+			data-emit-metadata="0"
+			data-input-position="bottom"
+			data-theme="preferred_color_scheme"
+			data-lang="en"
+			crossorigin="anonymous"
+			async>
+		  </script>
+        </div>
+	  </section>
+      <section id="nav_bar" class="inner">
+  	   {% include nav-bar.html %}
       </section>
     </div>
 
