@@ -1,4 +1,5 @@
 Gemfile.lock
 serve
+jekyll-build
 _site/
 .*.swp
